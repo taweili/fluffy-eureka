@@ -1,4 +1,8 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+import transformers
+
+transformers.logging.set_verbosity_info()
+
 
 model_name_or_path = "TheBloke/toxicqa-Llama2-7B-GPTQ"
 # To use a different branch, change revision
