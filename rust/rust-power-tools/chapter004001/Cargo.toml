@@ -1,0 +1,10 @@
+workspace = { members = ["make-public-macro"] }
+[package]
+name = "chapter004001"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+make-public-macro = { path = "./make-public-macro" }
