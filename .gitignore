@@ -2,3 +2,4 @@ pytorch/examples
 huggingface/models
 
 **/a.out
+.vscode/
