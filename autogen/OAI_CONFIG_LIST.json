@@ -1,0 +1,7 @@
+[
+    {
+        "base_url": "http://localhost:8000",
+        "model": "ollama/mistral",
+        "api_key": "NULL"
+    }
+]
