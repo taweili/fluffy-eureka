@@ -3,6 +3,7 @@ import autogen
 config_list = [
     {
         'base_url': "http://localhost:8000",
+        'model': "ollama/mistral",
         'api_key': "NULL"
     }
 ]
@@ -20,7 +21,7 @@ assistant = autogen.AssistantAgent(
 
 user_proxy = autogen.UserProxyAgent(
     name="user_proxy",
-    human_input_mode="NEVER",
+    human_input_mode="ALWAYS",
     max_consecutive_auto_reply=10,
     is_termination_msg=lambda x: x.get("content", "").rstrip().endswith("TERMINATE"),
     code_execution_config={"work_dir": "web"},
@@ -30,19 +31,10 @@ Otherwise, reply CONTINUE, or the reason why the task is not solved yet."""
 )
 
 task = """
-Write python code to output numbers 1 to 100, and then store the code in a file
+Write up a spec for a python program to print number from 1 to 100
 """
 
 user_proxy.initiate_chat(
     assistant,
     message=task
-)
-
-task2 = """
-Change the code in the file you just created to instead output numbers 1 to 200
-"""
-
-user_proxy.initiate_chat(
-    assistant,
-    message=task2
 )
