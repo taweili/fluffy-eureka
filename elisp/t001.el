@@ -1,9 +1,6 @@
-(require 'cl-http)
+(require 'ellama)
 
-(defun send-post-request (url data)
-  "Make a POST request and return the response."
-  (let ((response (http-request url :method :post
-                                :headers '(("Content-Type" . "application/json")
-                                           ("Authorization" . "Bearer YOUR_TOKEN"))
-                                :body data)))
-    (cl-http-parse-response response)))
+(ellama-stream "Write a elisp code to split a string into list"
+               :on-done 'got-code)
+(defun got-code (text)
+  (message "GOT-CODE"))
