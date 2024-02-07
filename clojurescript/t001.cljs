@@ -1,11 +1,12 @@
 (defn foo001 [a]
-  (println "foo001 %s " a)
-  1)
+  (printf "foo001 %s%n" a)
+  "foo001")
 
 (defn foo002 [a]
-  (println "foo002 %s" a)
-  2)
+  (printf "foo002 %s%n" a)
+  "foo002")
 
-(-> 10
+(-> "foo000"
     (foo001)
-    (foo002))
+    (foo002)
+    (foo001))
