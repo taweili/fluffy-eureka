@@ -3,3 +3,5 @@ huggingface/models
 **/a.out
 xedu/checkpoints
 .vscode/
+.clj-kondo/
+.lsp/
